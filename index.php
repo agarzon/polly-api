@@ -24,6 +24,7 @@ use League\Flysystem\Filesystem;
  */
 class PollyApi
 {
+    // Available voices for EN-US: Salli, Joanna, Ivy, Kendra, Kimberly, Matthew, Justin, Joey
     public $voices = ['Matthew', 'Joey', 'Kimberly'];
 
     private $PollyClient;
@@ -45,10 +46,10 @@ class PollyApi
         $this->PollyClient = new PollyClient(
             [
                 'version' => 'latest',
-                'region' => $_ENV['AWS_REGION'],
+                'region' => getenv(['AWS_REGION']),
                 'credentials' => [
-                    'key' => $_ENV['AWS_KEY'],
-                    'secret' => $_ENV['AWS_SECRET'],
+                    'key' => getenv(['AWS_KEY']),
+                    'secret' => getenv(['AWS_SECRET']),
                 ],
             ]
         );
