@@ -29,7 +29,7 @@ class PollyApi
 
     private $PollyClient;
 
-    private $filesystem;
+    private $FileSystem;
 
     private $Slugify;
 
@@ -55,7 +55,7 @@ class PollyApi
         );
 
         $adapter = new Local(__DIR__);
-        $this->filesystem = new Filesystem($adapter);
+        $this->FileSystem = new Filesystem($adapter);
         $this->Slugify = new Slugify();
 
         $this->loop();
@@ -93,23 +93,23 @@ class PollyApi
     {
         try {
             // Get all files from texts folder
-            $files = $this->filesystem->listContents('/texts/');
+            $files = $this->FileSystem->listContents('/texts/');
 
             foreach ($this->voices as $voice) {
                 // Creates for voice folder
-                $this->filesystem->createDir('/output/' . $voice);
+                $this->FileSystem->createDir('/output/' . $voice);
 
                 foreach ($files as $file) {
                     // Create directories based in file name
                     $destDirectory = '/output/' . $voice . '/' . $file['filename'];
-                    $this->filesystem->createDir($destDirectory);
-                    $fileContent = $this->filesystem->read($file['path']);
+                    $this->FileSystem->createDir($destDirectory);
+                    $fileContent = $this->FileSystem->read($file['path']);
                     $lines = explode(PHP_EOL, $fileContent);
                     // Reads each line, create the mp3 and save the content
                     foreach ($lines as $line) {
                         $fileName = $this->Slugify->slugify($line) . '.mp3';
                         $stream = $this->generateMp3($line, $voice);
-                        $this->filesystem->write($destDirectory . '/' . $fileName, $stream);
+                        $this->FileSystem->write($destDirectory . '/' . $fileName, $stream);
                     }
                 }
             }
