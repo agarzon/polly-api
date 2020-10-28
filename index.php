@@ -38,27 +38,32 @@ class PollyApi
      */
     public function __construct()
     {
-        set_time_limit(0);
 
-        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-        $dotenv->load();
+        try {
+            set_time_limit(0);
 
-        $this->PollyClient = new PollyClient(
-            [
-                'version' => 'latest',
-                'region' => getenv(['AWS_REGION']),
-                'credentials' => [
-                    'key' => getenv(['AWS_KEY']),
-                    'secret' => getenv(['AWS_SECRET']),
-                ],
-            ]
-        );
+            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+            $dotenv->load();
 
-        $adapter = new Local(__DIR__);
-        $this->FileSystem = new Filesystem($adapter);
-        $this->Slugify = new Slugify();
+            $this->PollyClient = new PollyClient(
+                [
+                    'version' => 'latest',
+                    'region' => $_ENV['AWS_REGION'],
+                    'credentials' => [
+                        'key' => $_ENV['AWS_KEY'],
+                        'secret' => $_ENV['AWS_SECRET'],
+                    ],
+                ]
+            );
 
-        $this->loop();
+            $adapter = new Local(__DIR__);
+            $this->FileSystem = new Filesystem($adapter);
+            $this->Slugify = new Slugify();
+
+            $this->loop();
+        } catch (\Throwable $th) {
+            echo 'ERROR: ' . $th->getMessage();
+        }
     }
 
     /**
@@ -113,8 +118,8 @@ class PollyApi
                     }
                 }
             }
-        } catch (Exception $e) {
-            echo 'ERROR: ' . $e->getMessage();
+        } catch (\Throwable $th) {
+            echo 'ERROR: ' . $th->getMessage();
         }
     }
 }
