@@ -1,0 +1,79 @@
+Block Fuel
+Payload
+Parking Brake
+Battery Switch
+Standby Power Selector
+A.P.U. Bleed Switch
+Left Forward Fuel Pump
+A.P.U. Start
+A.P.U. Generator Switches
+A.P.U. Generator Switches (1 and 2)
+Position Lights
+Logo Lights
+Cockpit Lights
+Emergency exit lights
+Passenger signs
+Seat belt signs
+Air Conditioning Pack Switches
+Pack control switches
+I.R.S. mode selectors
+F.M.C. initialization
+Yaw damper
+Fuel pumps
+Ground power switch
+Engine generator switches
+Window heat
+Probe heat
+Wing and Engine Anti ice
+Electric Hydraulic Pumps
+Engine Hydraulic Pumps
+Trim air
+Temperature control
+Recirculation Fan Switches
+Isolation valve switch
+Engine bleed switches
+Pressurization panel
+ATIS
+F.M.C.
+Flight instruments
+Warnings annunciations
+Auto-brake
+Reject Takeoff
+Stabilizer trim
+Transponder and T CAS
+Communications Audio panel
+Aileron and Rudder trim
+Taxi and Takeoff Briefing
+Cabin and cargo doors
+External Power and Air
+After and Forward Fuel Pumps
+Center Fuel Pumps
+Anti-collision Lights
+Lower Display Unit
+Engine Start Number 2
+Engine Start Number 2 Selector
+Engine Start Number 2 Control Switch
+Engine Start Number 1
+Engine Start Number 1 Selector
+Engine Start Number 1 Control Switch
+Engine Start Selectors 1 and 2
+Flaps
+Auto-throttle
+Flight Controls
+EICAS
+Taxi Lights
+Runway Turnoff Lights
+Landing Lights
+Strobe Lights
+Clock
+Transponder Mode
+Landing Gear
+Above 10000 feets
+Transition Altitude
+Recall
+Landing Data
+Approach Briefing
+Below 10000 feets
+Altimeters
+Speed Brakes
+Flight Director

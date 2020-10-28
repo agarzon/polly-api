@@ -1,0 +1,8 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.71",
+        "cocur/slugify": "^3.1",
+        "league/flysystem": "^1.0",
+        "vlucas/phpdotenv": "^5.2"
+    }
+}

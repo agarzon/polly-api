@@ -1,0 +1,4 @@
+/output/*
+/vendor/*
+!.gitignore
+.env
